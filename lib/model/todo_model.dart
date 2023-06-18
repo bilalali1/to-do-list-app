@@ -1,8 +1,8 @@
 
-class TodoModel {
+class Todo {
   final String id;
   final String title;
   final bool isCompleted;
 
-  TodoModel ({required this.id, required this.title, this.isCompleted = false});
+  Todo ({required this.id, required this.title, this.isCompleted = false});
 }

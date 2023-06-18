@@ -11,43 +11,43 @@ class TodoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-      return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: CustomAppBarWidget(
-          title: 'TODOS',
-        ),
-        body:
-        //CustomListCellSkeletonWidget(),
-        // EmptyScreen(),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: CustomAppBarWidget(
+        title: 'TODOS',
+      ),
+      body:
+      //CustomListCellSkeletonWidget(),
+      // EmptyScreen(),
 
 
-        ListView.separated(
-          padding: EdgeInsets.symmetric(horizontal:size.width*0.04,vertical: size.width*0.06),
-            itemCount: 20,
-            separatorBuilder: (context,index) => SizedBox(height: size.width*0.04,),
-            itemBuilder: (context,index) =>
+      ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal:size.width*0.04,vertical: size.width*0.06),
+        itemCount: 20,
+        separatorBuilder: (context,index) => SizedBox(height: size.width*0.04,),
+        itemBuilder: (context,index) =>
 
-                ListTile(
-                  tileColor: Colors.grey[200],
-                  title: const Text('This is first todo'),
-                  leading: Checkbox(
-                    value: true,
-                    checkColor: Colors.green,
-                    fillColor:MaterialStateProperty.resolveWith<Color>(
-                          (_) {
-                        return Colors.white; // Fill color when checkbox is unchecked
-                      },
-                    ),
-                    onChanged: (change){
-                    },
-                  ),
-                trailing: IconButton(
-                  icon: const Icon(Icons.delete_outline,color: Colors.black,),
-                  onPressed: (){},
+            ListTile(
+              tileColor: Colors.grey[200],
+              title: const Text('This is first todo'),
+              leading: Checkbox(
+                value: true,
+                checkColor: Colors.green,
+                fillColor:MaterialStateProperty.resolveWith<Color>(
+                      (_) {
+                    return Colors.white; // Fill color when checkbox is unchecked
+                  },
                 ),
-                ),
+                onChanged: (change){
+                },
+              ),
+              trailing: IconButton(
+                icon: const Icon(Icons.delete_outline,color: Colors.black,),
+                onPressed: (){},
+              ),
+            ),
 
-        ),
-      );
+      ),
+    );
   }
 }
